@@ -12,6 +12,8 @@
     'footer footer footer footer';
   justify-content: center;
   align-content: center;
+  justify-items: center;
+  align-items: center;
 }
 
 .el1 {

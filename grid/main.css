@@ -2,13 +2,12 @@
   margin: 20px;
   display: grid;
   height: 800px;
-  width: 800px;
   grid-template-columns: [hd-start] repeat(4, [col-start] 20% [col-end]) [hd-end];
   grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(10px, 20rem) [row-2-end row-3-start] 100px [row-3-end];
   gap: 10px 20px;
   grid-template-areas:
     'header header header header'
-    '. . main main'
+    '. side main main'
     'footer footer footer footer';
   justify-content: center;
   align-content: center;
@@ -16,9 +15,20 @@
   align-items: center;
 }
 
+@media (max-width: 40rem) {
+  .container {
+    grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(10px, 20rem) [row-2-end row-3-start] 150px [row-3-end] 100px;
+    grid-template-areas:
+      'header header header header'
+      'main main main main'
+      'side side side side'
+      'footer footer footer footer';
+  }
+}
+
 .el1 {
   background: rgba(255, 154, 72, 0.5);
-  grid-column: col-start 2 / col-end 2;
+  grid-area: side;
 }
 
 .el2 {
